@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.menu-header{
+    display: none;
+}
+
+.login-btn{
+    display: none;
+}
+
+.hero p{
+    display: none;
+}
