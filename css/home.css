@@ -21,6 +21,22 @@ body{
     min-height: 100vh;
     font-family: var(--font2);
     font-weight: normal;
+    background-color: var(--cor4);
+}
+
+body.active{
+    overflow-y: hidden;
+}
+
+#overlay.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #00000031;
+    backdrop-filter: blur(5px);
 }
 
 h1, h2, h3{
@@ -46,6 +62,7 @@ header{
 
 header.scroll-down{
     background-color: var(--cor1);
+    box-shadow: 0 2px 10px #2828287a;
 }
 
 .logo{
@@ -81,6 +98,17 @@ header.scroll-down{
     background-color: var(--cor4);
 }
 
+main h2{
+    width: max-content;
+    padding: .4rem;
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    border-bottom: 3px solid;
+}
+
+main h3{
+    font-size: clamp(1.2rem, 1.5rem, 2rem);
+}
+
 .side-menu{
     position: fixed;
     top: 0;
@@ -88,13 +116,13 @@ header.scroll-down{
     width: 230px;
     height: 100dvh;
     z-index: 9999;
-    border: 1px solid;
-    background: #fff;
+    background: var(--cor1);
     transition: right .4s ease-in-out;
 }
 
 .side-menu.active{
     right: 0;
+    box-shadow: -2px 0 10px #28282854;
 }
 
 .close-icon{
@@ -115,7 +143,7 @@ header.scroll-down{
     top: 50%;
     left: 0;
     transform-origin: center;
-    background-color: var(--cor2);
+    background-color: var(--cor4);
 }
 
 .close-icon span:first-child{
@@ -144,6 +172,7 @@ header.scroll-down{
     font-family: var(--font2);
     font-size: 1.2rem;
     text-decoration: none;
+    color: var(--cor4);
 }
 
 .hero{
@@ -162,6 +191,160 @@ header.scroll-down{
     font-size: clamp(2rem, 10vw, 5rem);
 }
 
+.hero strong{
+    font-weight: bold;
+    color: var(--cor1);
+}
+
 .hero p{
     display: none;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 2rem 1rem;
+}
+
+.services-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .5rem;
+    width: 90%;
+    padding-block: 1rem;
+}
+
+.services-card{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    text-shadow: 3px 3px 10px #000000fa;
+    line-height: 350px;
+    color: var(--cor4);
+    background-size: cover;
+    background-position: center center;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 40%;
+}
+
+.services-card:nth-child(1){
+    background-image: url(../assets/implante-img.jpg);
+}
+.services-card:nth-child(2){
+    background-image: url(../assets/implante-img.jpg);
+}
+.services-card:nth-child(3){
+    background-image: url(../assets/implante-img.jpg);
+}
+.services-card:nth-child(4){
+    background-image: url(../assets/implante-img.jpg);
+}
+.services-card:nth-child(5){
+    background-image: url(../assets/implante-img.jpg);
+}
+
+.services button{
+    padding: 10px 15px;
+    margin-top: 1.3rem;
+    font-size: clamp(1.1rem, 1.2rem, 1.5rem);
+    font-weight: 550;
+    border: none;
+    outline: none;
+    color: var(--cor4);
+    background-color: var(--cor1);
+    transition: transform .3s ease;
+}
+
+.services button:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 3px 5px #00000075;
+}
+
+.services button:active{
+    transform: scale(.9);
+    box-shadow: none;
+}
+
+.diferencials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    color: var(--cor4);
+    background-color: var(--cor1);
+}
+
+.diferencials-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    width: 90%;
+    padding-block: 1rem;
+}
+
+.diferencials-card{
+    width: 100%;
+    height: 350px;
+    text-align: center;
+    line-height: 350px;
+    border: 1px solid;
+
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 40%;
+}
+
+@keyframes scroll {
+    from{
+        opacity: 0;
+        scale: .5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+.contact h2{
+    font-size: clamp(.9rem, 1.2rem, 1.4rem);
+    border: none;
+    padding-bottom: 1rem;
+}
+
+.adress iframe{
+    margin-top: 1rem;
+}
+
+.links ul{
+    list-style: none;
+}
+
+.links a{
+    text-decoration: none;
+    color: var(--cor3);
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7rem 2rem;
+    color: var(--cor4);
+    background-color: var(--cor1);
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--cor4);
 }
