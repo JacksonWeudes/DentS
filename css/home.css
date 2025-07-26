@@ -73,8 +73,18 @@ header.scroll-down{
     display: none;
 }
 
-.login-btn{
-    display: none;
+.menu-header ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+.menu-header a{
+    text-decoration: none;
+    color: var(--cor4);
 }
 
 .menu-icon{
@@ -179,7 +189,7 @@ main h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    height: 130dvh;
     background-image: url(../assets/bg-hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -189,11 +199,6 @@ main h3{
 .hero h1{
     color: var(--cor4);
     font-size: clamp(2rem, 10vw, 5rem);
-}
-
-.hero strong{
-    font-weight: bold;
-    color: var(--cor1);
 }
 
 .hero p{
@@ -217,11 +222,13 @@ main h3{
 }
 
 .services-card{
+    position: relative;
     width: 100%;
     margin: auto;
     text-align: center;
     text-shadow: 3px 3px 10px #000000fa;
     line-height: 350px;
+    border-radius: 5px;
     color: var(--cor4);
     background-size: cover;
     background-position: center center;
@@ -230,20 +237,38 @@ main h3{
     animation-range: entry 0 40%;
 }
 
+.services-card h3{
+    z-index: 9;
+}
+
+.services-card:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #2b4ecd56;
+}
+
 .services-card:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(../assets/implante-img.jpg);
 }
 .services-card:nth-child(2){
-    background-image: url(../assets/implante-img.jpg);
+    background-image: url(../assets/clareamento.jpg)
 }
 .services-card:nth-child(3){
-    background-image: url(../assets/implante-img.jpg);
+    background-image: url(../assets/protese.jpg);
 }
 .services-card:nth-child(4){
-    background-image: url(../assets/implante-img.jpg);
+    background-image: url(../assets/aparelho.jpg);
 }
 .services-card:nth-child(5){
-    background-image: url(../assets/implante-img.jpg);
+    background-image: url(../assets/cirurgia.jpg);
 }
 
 .services button{
@@ -281,21 +306,17 @@ main h3{
 .diferencials-box{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    justify-content: space-between;
+    gap: .5rem;
     width: 90%;
     padding-block: 1rem;
 }
 
 .diferencials-card{
     width: 100%;
-    height: 350px;
     text-align: center;
-    line-height: 350px;
-    border: 1px solid;
+    text-transform: uppercase;
 
-    animation: scroll linear;
-    animation-timeline: view();
-    animation-range: entry 0 40%;
 }
 
 @keyframes scroll {
@@ -347,4 +368,75 @@ footer{
 footer a{
     text-decoration: none;
     color: var(--cor4);
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .menu-icon{
+        display: none;
+    }
+    .menu-header{
+        display: block;
+    }
+    .adress iframe{
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media  screen and (min-width: 992px) {
+    .menu-icon{
+        display: none;
+    }
+    .menu-header{
+        display: block;
+    }
+    .hero p{
+        display: block;
+        width: 300px;
+        font-size: 1rem;
+        color: #c7c5c5;
+        margin-left: 2rem;
+    }
+    .hero h1{
+        margin-left: 2rem ;
+    }
+    .services h2{
+        margin-bottom: 3rem;
+    }
+    .services-box{
+        height: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "item1 item2 item3"
+            "item1 item4 item5"
+        ;
+    }
+    .services-card{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        animation: none;
+    }
+    .services-card:nth-child(1){
+        grid-area: item1;
+    }
+    .services-card:nth-child(2){
+        grid-area: item2;
+    }
+    .services-card:nth-child(3){
+        grid-area: item3;
+    }
+    .services-card:nth-child(4){
+        grid-area: item4;
+    }
+    .services-card:nth-child(5){
+        grid-area: item5;
+    }
+    .diferencials{
+        height: 100dvh;
+    }
+    .adress iframe{
+        width: 300px;
+        height: 300px;
+    }
 }
