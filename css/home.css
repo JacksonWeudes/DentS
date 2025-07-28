@@ -293,11 +293,37 @@ main h3{
     box-shadow: none;
 }
 
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background: url(../assets/about-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.about h2{
+    color: var(--cor1);
+    border: 1px solid;
+}
+
+.about p{
+    width: clamp(70%, 300px, 70%);
+    padding: 2rem 1rem;
+    color: var(--cor4);
+    border: 1px solid;
+    background-color: var(--cor1);
+}
+
 .diferencials{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100dvh;
     padding: 2rem 1rem;
     color: var(--cor4);
     background-color: var(--cor1);
@@ -309,14 +335,25 @@ main h3{
     justify-content: space-between;
     gap: .5rem;
     width: 90%;
+    height: 100%;
     padding-block: 1rem;
 }
 
 .diferencials-card{
+    position: relative;
+    width: 100%;
+    border: 1px solid;
+    text-transform: uppercase;
+}    
+
+.diferencials-card h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
-    text-transform: uppercase;
-
+    border: 1px solid;
 }
 
 @keyframes scroll {
@@ -431,6 +468,9 @@ footer a{
     }
     .services-card:nth-child(5){
         grid-area: item5;
+    }
+    .about{
+        background-position: top center;
     }
     .diferencials{
         height: 100dvh;
