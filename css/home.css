@@ -44,8 +44,17 @@ h1, h2, h3{
     font-family: var(--font1);
 }
 
+body p{
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
 button{
     cursor: pointer;
+}
+
+a:focus{
+    border: none;
+    outline: 1px solid var(--cor4);
 }
 
 header{
@@ -85,6 +94,7 @@ header.scroll-down{
 
 .menu-header a{
     padding: .8rem .5rem;
+    border-radius: 5px;
     text-decoration: none;
     color: var(--cor4);
     transition: .3s ease-in-out;
@@ -92,7 +102,10 @@ header.scroll-down{
 
 .menu-header a:hover{
     background-color: #ffffff4f;
-    border-radius: 5px;
+}
+
+.menu-header a:focus{
+    outline: 1px solid var(--cor4);
 }
 
 .menu-icon{
@@ -222,7 +235,7 @@ main{
     height: 0;
     border-right: 100vw solid transparent;
     border-bottom: 13.9vw solid var(--cor4);
-    margin-top: -13.8vw;
+    margin-top: -13.4vw;
 }
 
 .services{
@@ -255,11 +268,11 @@ main{
     position: relative;
     width: 100%;
     margin: auto;
-    text-align: center;
-    line-height: 350px;
     text-shadow: 3px 3px 10px #000000fa;
     border-radius: 5px;
     z-index: 1;
+    text-align: center;
+    line-height: 360px;
     color: var(--cor4);
     background-size: cover;
     background-position: center center;
@@ -277,9 +290,6 @@ main{
 }
 
 .services-card:nth-child(1){
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url(../assets/implante-img.jpg);
 }
 .services-card:nth-child(2){
@@ -316,6 +326,10 @@ main{
 .services button:active{
     transform: scale(.9);
     box-shadow: none;
+}
+
+.services button:focus{
+    outline: 1px solid var(--cor2);
 }
 
 .about{
@@ -362,19 +376,86 @@ main{
 
 .diferencials-box{
     display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .5rem;
     width: 90%;
     padding-block: 3rem;
+    perspective: 1000px;
 }
 
 .diferencials-card{
     position: relative;
-    width: 100%;
-    border: 1px solid;
-    text-transform: uppercase;
+    width: 90%;
+    height: 350px;
+    margin: auto;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform-style: preserve-3d;
+    transition: transform .6s ease-in-out;
 }    
+
+.diferencials-card h3{
+    font-size: .9rem;
+}
+
+.diferencials-card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--cor6);
+}
+
+.front,
+.back{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.front{
+    color: var(--cor4); 
+    transform: rotateY(0deg);
+}
+
+.diferencials-card:nth-child(1){
+    background-image: url(../assets/tecnologia.jpg);
+}
+.diferencials-card:nth-child(2){
+    background-image: url(../assets/pagamento.jpg);
+}
+.diferencials-card:nth-child(3){
+    background-image: url(../assets/atendimento.jpg);
+}
+.diferencials-card:nth-child(4){
+    background-image: url(../assets/agendamento.jpg);
+}
+
+.back{
+    text-align: center;
+    color: var(--cor1);
+    background-color: var(--cor4);
+    transform: rotateY(180deg);
+}
+
+.diferencials-card:hover{
+    transform: rotateY(180deg);
+}
+
+.diferencials-card h3{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    text-transform: uppercase;
+}
 
 .contact{
     display: grid;
@@ -390,6 +471,7 @@ main{
 }
 
 .contact p{
+    font-size: 1.1rem;
     padding-left: .3rem;
     color: var(--cor3);
 }
@@ -406,6 +488,10 @@ main{
 .contact a{
     text-decoration: none;
     color: var(--cor3);
+}
+
+.contact a:focus{
+    outline: 1px solid var(--cor3);
 }
 
 .contact a:hover{
@@ -426,6 +512,7 @@ footer{
 }
 
 footer a{
+    text-transform: uppercase;
     text-decoration: none;
     color: var(--cor4);
 }
