@@ -1,0 +1,87 @@
+@import url(base.css);
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3rem;
+}
+
+.main h2{
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    text-align: center;
+}
+
+.main h3{
+    font-size: clamp(1.3rem, 2vw, 2rem);
+}
+
+body p{
+    width: 70%;
+    margin: auto;
+    margin-block: .9rem;
+    text-align: justify;
+    color: var(--cor2);
+}
+
+.services-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid;
+    gap: 2rem;
+    padding-block: 2rem;
+}
+
+.services-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    width: 80%;
+    height: 350px;
+    margin: auto;
+    border-radius: 10px;
+    color: var(--cor4);
+    z-index: 1;
+    background-image: url(../assets/aparelho.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.services-card p{
+    color: var(--cor4);
+}
+
+.services-card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-color: var(--cor6);
+}
+
+.services-card p{
+    width: 90%;
+    margin: 0;
+}
+
+.main button{
+    padding: .9rem 1rem;
+    margin-block: 1rem;
+    text-transform: uppercase;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: var(--cor4);
+    background-color: var(--cor1);
+}

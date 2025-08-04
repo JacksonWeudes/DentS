@@ -25,3 +25,45 @@ body{
     font-weight: normal;
     background-color: var(--cor4);
 }
+
+body p{
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+h1, h2, h3{
+    font-family: var(--font1);
+}
+
+a:focus{
+    border: none;
+    outline: 1px solid var(--cor4);
+}
+
+.header{
+    text-align: center;
+    color: var(--cor4);
+    background-color: var(--cor1);
+}
+
+.header h1{
+    font-size: clamp(3rem, 2vw, 5rem);
+}
+
+button{
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--cor7);
+    background-color: var(--cor1);
+}
+
+.footer a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--cor7);
+}

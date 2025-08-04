@@ -15,23 +15,6 @@ body.active{
     backdrop-filter: blur(5px);
 }
 
-h1, h2, h3{
-    font-family: var(--font1);
-}
-
-body p{
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-}
-
-button{
-    cursor: pointer;
-}
-
-a:focus{
-    border: none;
-    outline: 1px solid var(--cor4);
-}
-
 header{
     position: fixed;
     width: 100%;
@@ -564,6 +547,9 @@ footer a{
     }
     .services-card:nth-child(1){
         grid-area: item1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .services-card:nth-child(2){
         grid-area: item2;
