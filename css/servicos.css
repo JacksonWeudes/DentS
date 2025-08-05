@@ -9,7 +9,7 @@
 }
 
 .main h2{
-    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    font-size: clamp(1.5rem, 8vw, 3rem);
     text-align: center;
 }
 
@@ -17,7 +17,7 @@
     font-size: clamp(1.3rem, 2vw, 2rem);
 }
 
-body p{
+ body p{
     width: 70%;
     margin: auto;
     margin-block: .9rem;
@@ -27,9 +27,8 @@ body p{
 
 .services-box{
     display: grid;
-    grid-template-columns: 1fr;
-    border: 1px solid;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .5rem;
     padding-block: 2rem;
 }
 
@@ -40,19 +39,19 @@ body p{
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
-    width: 80%;
+    max-width: 350px;
     height: 350px;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--cor4);
     z-index: 1;
-    background-image: url(../assets/aparelho.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .services-card p{
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
     color: var(--cor4);
 }
 
@@ -68,6 +67,37 @@ body p{
     background-color: var(--cor6);
 }
 
+.services-card:nth-child(1){
+    background-image: url(../assets/implante-img.jpg);
+}
+.services-card:nth-child(2){
+    background-image: url(../assets/clareamento.jpg);
+}
+.services-card:nth-child(3){
+    background-image: url(../assets/protese.jpg);
+}
+.services-card:nth-child(4){
+    background-image: url(../assets/aparelho.jpg);
+}
+.services-card:nth-child(5){
+    background-image: url(../assets/cirurgia.jpg);
+}
+.services-card:nth-child(6){
+    background-image: url(../assets/limpeza.jpg);
+}
+.services-card:nth-child(7){
+    background-image: url(../assets/harmonizacao.jpg);
+}
+.services-card:nth-child(8){
+    background-image: url(../assets/restauracao.jpg);
+}
+.services-card:nth-child(9){
+    background-image: url(../assets/canal.jpg);
+}
+.services-card:nth-child(10){
+    background-image: url(../assets/pirralho.jpg);
+}
+
 .services-card p{
     width: 90%;
     margin: 0;
@@ -79,9 +109,71 @@ body p{
     text-transform: uppercase;
     font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     outline: none;
     color: var(--cor4);
     background-color: var(--cor1);
+}
+
+footer P{
+    color: var(--cor4);
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .services-box{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .services-box{
+        height: 300dvh;
+        padding-inline: 5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+            "item1 item1 item2"
+            "item3 item4 item2"
+            "item5 item4 item6"
+            "item7 item8 item6"
+            "item9 item9 item10"
+        ;
+    }
+    .services-card{
+        max-width: unset;
+        height: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .services-card:nth-child(1){
+        grid-area: item1;
+    }
+    .services-card:nth-child(2){
+        grid-area: item2;
+    }
+    .services-card:nth-child(3){
+        grid-area: item3;
+    }
+    .services-card:nth-child(4){
+        grid-area: item4;
+    }
+    .services-card:nth-child(5){
+        grid-area: item5;
+    }
+    .services-card:nth-child(6){
+        grid-area: item6;
+    }
+    .services-card:nth-child(7){
+        grid-area: item7;
+    }
+    .services-card:nth-child(8){
+        grid-area: item8;
+    }
+    .services-card:nth-child(9){
+        grid-area: item9;
+    }
+    .services-card:nth-child(10){
+        grid-area: item10;
+    }
 }
