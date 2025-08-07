@@ -51,7 +51,7 @@
 }
 
 .services-card p{
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: clamp(1.1rem, 2vw, 1rem);
     color: var(--cor4);
 }
 
@@ -98,12 +98,8 @@
     background-image: url(../assets/pirralho.jpg);
 }
 
-.services-card p{
-    width: 90%;
-    margin: 0;
-}
-
 .main button{
+    min-width: 300px;
     padding: .9rem 1rem;
     margin-block: 1rem;
     text-transform: uppercase;
@@ -114,6 +110,25 @@
     outline: none;
     color: var(--cor4);
     background-color: var(--cor1);
+}
+
+.home-link{
+    min-width: 300px;
+    padding-block: .9rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    border-radius: 5px;
+    color: var(--cor4);
+    background-color: var(--cor1);
+    transition: .4s ease;
+}
+
+.home-link:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 3px 5px #00000075;
 }
 
 footer P{
@@ -128,6 +143,7 @@ footer P{
 
 @media screen and (min-width: 992px){
     .services-box{
+        width: 80%;
         height: 300dvh;
         padding-inline: 5rem;
         grid-template-columns: repeat(3, 1fr);
@@ -142,6 +158,7 @@ footer P{
     }
     .services-card{
         max-width: unset;
+        width: 100%;
         height: 100%;
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -175,5 +192,22 @@ footer P{
     }
     .services-card:nth-child(10){
         grid-area: item10;
+    }
+    .services-card p{
+        position: absolute;
+        padding: 10px;
+        border-radius: 10px;
+        opacity: 0;
+        color: var(--cor1);
+        background-color: var(--cor4);
+        transition: opacity .4s ease-in-out;
+    }
+    .services-card:hover{
+        h3{
+            opacity: 0;
+        }
+        p{
+            opacity: 100%;
+        }
     }
 }

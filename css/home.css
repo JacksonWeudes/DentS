@@ -33,6 +33,11 @@ header.scroll-down{
     box-shadow: 0 2px 10px #2828287a;
 }
 
+header button:hover{
+    transform: none;
+    box-shadow: none;
+}
+
 .logo{
     margin-left: 2rem;
 }
@@ -140,6 +145,11 @@ main h3{
 }
 .close-icon span:last-child{
     transform: rotate(-45deg);
+}
+
+.side-menu button:hover{
+    transform: none;
+    box-shadow: none;
 }
 
 .side-menu ul{
@@ -270,7 +280,7 @@ main{
     background-image: url(../assets/cirurgia.jpg);
 }
 
-.services button{
+.more-btn{
     padding: 10px 15px;
     margin-top: 1.3rem;
     font-size: clamp(1.1rem, 1.2rem, 1.5rem);
@@ -280,15 +290,14 @@ main{
     outline: none;
     color: var(--cor4);
     background-color: var(--cor1);
-    transition: transform .3s ease;
 }
 
-.services button:hover{
-    transform: scale(1.1);
-    box-shadow: 2px 3px 5px #00000075;
+.more-btn.diferencials{
+    color: var(--cor1);
+    background-color: var(--cor4);
 }
 
-.services button:active{
+.more-btn:active{
     transform: scale(.9);
     box-shadow: none;
 }

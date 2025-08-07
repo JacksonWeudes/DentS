@@ -40,6 +40,7 @@ a:focus{
 }
 
 .header{
+    padding-block: .5rem;
     text-align: center;
     color: var(--cor4);
     background-color: var(--cor1);
@@ -51,13 +52,19 @@ a:focus{
 
 button{
     cursor: pointer;
+    transition: .3s ease;
+}
+
+button:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 3px 5px #00000075;
 }
 
 .footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: .3rem 2rem;
     color: var(--cor7);
     background-color: var(--cor1);
 }
