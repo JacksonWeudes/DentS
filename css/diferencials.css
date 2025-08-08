@@ -1,0 +1,107 @@
+@import url(base.css);
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3rem;
+}
+
+.main h2{
+    font-size: clamp(1.5rem, 8vw, 3rem);
+}
+
+.desc{
+    width: 80%;
+    text-align: justify;
+    margin-block: 1rem 3rem;
+    color: var(--cor3);
+}
+
+.diferencials-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-block: 3rem;
+    gap: 1rem;
+    background-color: var(--cor1);
+}
+
+.card{
+    width: 70%;
+    min-height: 400px;
+    padding: .7rem;
+    margin: auto;
+    border-radius: 5px;
+    background-color: var(--cor4);
+    box-shadow: 3px 3px 10px #00000059;
+}
+
+.card img{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 5px;
+}
+
+.card h3{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    text-align: center;
+    margin-block: .4rem;
+    color: var(--cor1);
+}
+
+.card P{
+    padding: .4rem;
+    text-align: justify;
+    color: var(--cor3);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.buttons button{
+    min-width: 250px;
+    padding: 10px 15px;
+    margin-block: .5rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cor1);
+    color: var(--cor4);
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .diferencials-box{
+        grid-template-columns: 1fr 1fr;
+    }
+    .card{
+        width: 90%;
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .desc{
+        width: 50%;
+    }
+    .diferencials-box{
+        padding-block: 5.5rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+    .card{
+        width: 90%;
+        height: 550px;
+        margin: .4rem;
+    }
+    .card P{
+        padding-block: .5rem;
+        text-align: center;
+    }
+}
